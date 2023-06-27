@@ -1,0 +1,4 @@
+"Código";"Nombre";"Categoría";"Descripción";"Método abastecimiento";"Método coste";"Método suministro";"Precio coste";"Precio de venta";"Puede ser comprado";"Puede ser vendido";"Tipo de producto";"Empresas/Empresa";"Impuestos cliente";"Impuestos proveedor";"UdM de compra";"UdM por defecto"
+"cod1";"nombreproducto1";4;"descripcion producto1";"make_to_order";"standard";"buy";0;0;"True";"True";"product";"Empresa demo";94;95;3;3
+"cod2";"nombreproducto2";4;"descripcion producto2";"make_to_stock";"standard";"buy";0;0;"True";"True";"product";"Empresa demo";94;95;3;3
+"cod3";"nombreproducto3";4;"descripcion producto3";"make_to_order";"standard";"buy";0;0;"True";"True";"product";"Empresa demo";94;95;3;3

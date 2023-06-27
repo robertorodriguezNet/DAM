@@ -1,0 +1,127 @@
+<!-- Título del formulario -->
+<form string="Empresa">  
+
+  <!-- Sheet delimita el área en el que se muesta la información de registro.
+       Para ordenar la información se usa la etiqueta group.                  -->
+  <sheet>
+    
+    <!-- Campos invisibles pero que son necesarios porque los usaremos en alguna de las vistas 
+         como valores por defecto -->
+    <field name="is_company" invisible="1"/>
+    <field name="active" invisible="1"/>
+    <field name="user_id" invisible="True"/>
+    
+    <!-- Los campos usados dentro de una hoja, si están fuera de <group>, no muestran la etiqueta. -->
+	  <div class="oe_title">
+	    <h1>
+		    <field name="name" default_focus="1" placeholder="Nombre de la empresa" />
+      </h1>
+	  </div>
+
+	  <!-- Grupos para ordenar la información del registro.
+	       Los campos que se encuentran dentro de group muestran su etiqueta.
+	       El contenido se va mostrando de izquierda a derecha y de arriba a abajo.-->
+	  <group>  
+	  
+	  <!-- Dividimos la información en dos grupos que se mostrarán de forma horizontal -->
+	    <!-- Al ser el primer grupo, ocupa la parte izquierda -->
+	    <group>
+	      <field name="title"/>
+	      
+	      <!-- Campo para la selección del idioma que incluye un botón para la selección -->
+        <label for="lang"/>
+        <div class="o_row">
+          <field name="lang"/>
+          <!--Botón para seleccionar diferentes idiomas -->
+          <button type="action" name="55" class="btn-sm btn-link mb4 fa fa-globe" aria-label="Más lenguajes " groups="base.group_system" title="Más lenguajes languages"/>
+        </div>            
+            
+	    </group>
+	
+	    <!-- Grupo que se muestra a la derecha -->
+      <group>
+        <field name="credit_limit"/>
+        <field name="company_type"/>
+      </group>
+
+    </group>
+    
+    <!-- Hoja para las vistas de los contactos.
+         Las dos vistas se muestran dentro de la misma hoja, aunque el formulario tenga su
+         propia hoja para tener una vista con un contorno bien definido.               -->
+    <sheet>
+      
+      <h1>Contactos</h1>
+      
+      <!-- Campo con los registros hijo. Se carga por defecto el campo parent_id y user_id.
+           Ambas vistas son elementos hijo de childs_id.
+           Primero se muestra la vista árbol. 
+           
+           Se establecen algunos valores por defecto: el elemento padre y el usuario actual. -->
+      <field name="child_ids" context="{'default_parent_id': active_id, 'default_user_id': user_id}">
+                   
+        <!-- Vista de tipo árbol para los contactos. 
+             Se carga antes de que lo haga la vista form -->
+        <tree string="Árbol Contactos">
+          <field name="name"/>
+          <field name="zip"/>
+          <field name="city"/>
+          <field name="country_id"/>
+          <field name="phone"/>
+          <field name="email"/>
+        </tree>
+        <!-- fin de la vista de árbol para los contactos _____________________________ -->
+        
+        <!-- formulario para mostrar los contactos ___________________________________ -->
+        <form string="Formularo Contactos">
+          <sheet>
+            
+            <!-- Sacamos los campos name y function para que no muestren la etiqueta -->
+            <div>
+              <h1>
+                <field name="name"/>
+              </h1>
+              <field name="function"/>
+            </div>
+            
+            <hr/>
+            
+            <!--iniciamos un primer grupo para que los que quedan dentro se alineen de 
+                forma horizontal. -->
+            <group>
+              
+              <!-- Este grupo se muestra a la izquierda -->
+              <group>
+                <field name="street"/>
+                <field name="street2"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+              </group>
+              
+              <!-- Al estar declarado en segundo lugar, 
+                   este grupo se sitúa a la derecha del anterior -->
+              <group>
+                <p style="text-decoration: underline">Datos de contacto</p>
+                <field name="phone"/>
+                <field name="email"/>   
+              </group>
+              
+            </group>
+            
+          </sheet>
+          
+        </form>
+        <!-- Fin de la vista form para los contactos _______________________________  -->
+      
+      </field>
+      <!-- fin del campo child_ids que engloba las vistas de los contactos _________  -->
+
+    </sheet>
+    <!-- Fin de la hoja que muestra las vistas de los contactos ____________________  -->
+    
+  
+  </sheet>
+  <!-- Fin de la hoja principal ____________________________________________________  -->
+
+</form>

@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+    <!-- Vista árbol -->
+    <record model="ir.ui.view" id="agenda.agenda_list_view">
+      <field name="name">agenda.view.tree</field>
+      <field name="model">agenda.agenda</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record model="ir.ui.view" id="agenda.agenda_form_view">
+      <field name="name">agenda.view.form</field>
+      <field name="model">agenda.agenda</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo registro">
+            <!-- Insertamos el formulario en una hoja para que no ocupe toda la pantalla -->
+            <sheet>
+                <!-- Cabecera -->
+                <div class="oe_title">
+                    <h1>Nuevo contacto</h1>
+                </div>         
+                <group>
+                    <field name="name" placeholder="Nombre del contacto"/>
+                    <field name="telefono" placeholder="000000000"/>
+                </group>   
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Acciones de menú-->
+    <record model="ir.actions.act_window" id="agenda.action_window">
+      <field name="name">Listado</field>
+      <field name="res_model">agenda.agenda</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú raíz -->
+    <menuitem name="Agenda" id="agenda.menu_root" action="agenda.action_window"/>
+
+    </data>
+</odoo>

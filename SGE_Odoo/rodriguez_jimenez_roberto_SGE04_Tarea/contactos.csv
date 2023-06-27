@@ -1,0 +1,4 @@
+ID externo,Nombre,Nombre de la compañía,Calle,Ciudad,Estado/ID,C.P.,Teléfono,correo electrónico,País/ID,Rango del Cliente,Rango de proveedor,Enlace a página web,Es una compañia,Sector / Id. de la BD
+1247,Creaciones del Norte,Creaciones del Norte S.A.,Calle primera s/n,Villanueva,433,65676,787232323,info@creanorte.esd,68,1,0,www.creanorte.esd,VERDADERO,10
+1347,Criações do Norte,Criações do Norte,Rua Bacalao a  bras  nº 345,Coimbra,253,76543,525525525,info@nortecreations.ptd,183,1,0,www.nortcreations.ptd,VERDADERO,13
+1447,Piezas los Cuñaos,Piezas los Cuñaos C.B.,Paseo al sol nº 7,Aldeavieja,451,98984,999777666,info@piezascunao.esd,68,0,1,www.piezascunaos.esd,VERDADERO,3

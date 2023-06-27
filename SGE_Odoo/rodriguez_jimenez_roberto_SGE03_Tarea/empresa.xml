@@ -1,0 +1,64 @@
+<!-- Título del formulario -->
+<form string="Empresa">  
+
+  <!-- Sheet delimita el área en el que se muesta la información de registro.
+       Para ordenar la información se usa la etiqueta group.                  -->
+  <sheet>
+    
+    <!-- Campos ocultos -->
+    <!-- En caso de ser editado, debe estar marcado como empresa -->
+    <field name="active" invisible="1"/>
+
+    
+    <!-- Definimos los campos que queremos mostrar -->
+    
+    <!-- Los campos usados dentro de una hoja, si están fuera de <group>, no muestran la etiqueta. -->
+	  <div class="oe_title">
+	      <h1>
+		      <field name="name" default_focus="1" placeholder="Nombre" />
+        </h1>
+	  </div>
+	  <div class="o_row">
+	    <field name="parent_id" invisible="1"/>
+	  </div>
+	  
+	  <!-- Grupos para ordenar la información del registro.
+	       Los campos que se encuentran dentro de group muestran su etiqueta.
+	       El contenido se va mostrando de izquierda a derecha y de arriba a abajo.-->
+	  <group>  
+	  
+	  <!-- Dividimos la información en dos grupos que se mostrarán de forma horizont -->
+	    <group>
+	      <field name="title"/>
+	      <!-- Campo para la selección del idioma que incluye un botón para la selección -->
+        <label for="lang"/>
+          <div class="o_row">
+          <field name="lang"/>
+          <button type="action" 
+		        name="55" 
+		        class="btn-sm btn-link mb4 fa fa-globe" 
+		        aria-label="Más idiomas" 
+		        groups="base.group_system" 
+		        title="Más idiomas"/>
+        </div>
+	    </group>
+	
+      <group>
+        <field name="credit_limit"/>
+        <field name="is_company"/>
+      </group>
+
+    </group>
+    
+    
+  <!-- Grupo para mostrar la información de los contactos -->
+  <notebook>
+    <page string="Contactos">
+      
+    </page>
+  </notebook>
+  
+  </sheet>
+  
+</form>
+
